@@ -2,14 +2,14 @@
 
 Vytvorte projekt pre konzolovú aplikáciu, ktorá z textového súboru načíta zoznam študujúcich jednej skupiny a vytvorí ich zoznam. Každý riadok obsahuje nasledujúce údaje  (jednotlivé údaje v riadku sú oddelené medzerou): 
 
-*Priezvisko 
-*Meno
-*Pohlavie (M-muž, Z-žena)
-*Známka 1. predmet (A - E)
-*Známka 2. predmet (A - E)
-*Známka 3. predmet (A - E)
-*Známka 4. predmet (A - E)
-*Známka 5. predmet (A - E)
+*Priezvisko*
+*Meno*
+*Pohlavie (M-muž, Z-žena)*
+*Známka 1. predmet (A - E)*
+*Známka 2. predmet (A - E)*
+*Známka 3. predmet (A - E)*
+*Známka 4. predmet (A - E)*
+*Známka 5. predmet (A - E)*
 		
 Meno vstupného súboru sa bude zadávať ako parameter štartu programu.
 
