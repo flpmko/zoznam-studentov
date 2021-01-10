@@ -1,5 +1,6 @@
 #include "Student.h"
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
@@ -72,13 +73,18 @@ float Student::getPriemer()
 	if (this->znamky != nullptr)
 	{
 		float sucet = 0;
-		float pocet = strlen(this->znamky);
-		for (int i = 0; i < pocet; i++)
+		float pocet = (strlen(this->znamky)) % 6;
+		for (int i = 0; i < strlen(this->znamky) - 1; i++)
 		{
 			switch (this->znamky[i])
 			{
 			case 'A':
 				sucet++;
+				this->pocetA++;
+				if (!this->mamA)
+				{
+					this->mamA = true;
+				}
 				break;
 			case 'B':
 				sucet += 2;
@@ -92,6 +98,8 @@ float Student::getPriemer()
 			case 'E':
 				sucet += 5;
 				break;
+			default:
+				break;
 			} 
 		}
 		priemer = sucet / pocet;
@@ -103,7 +111,8 @@ float Student::getPriemer()
 
 void Student::vypis()
 {
-	cout << this->priezvisko << " " << this->meno << " " << this->getPriemer() << endl;
+	//cout << this->priezvisko << " " << this->meno << " " << fixed << setprecision(2) << this->getPriemer() << endl;
+	printf("%s %s %.2f\n", this->priezvisko, this->meno, this->getPriemer());
 }
 
 Student::~Student()

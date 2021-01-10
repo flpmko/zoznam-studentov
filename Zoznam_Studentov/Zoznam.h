@@ -11,7 +11,9 @@ public:
 	Zoznam(char* paNazovSuboru);
 	Zoznam(const Zoznam& zdroj);
 	Zoznam operator=(const Zoznam& zdroj);
-	void zorad();
+	void zoradVzostupne();
+	void zoradZostupne();
+	void vymen(Student& a, Student& b);
 	void vypis();
 	void exportujAckarov();
 	void vypisNajhorsich();

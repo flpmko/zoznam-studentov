@@ -71,7 +71,8 @@ char* Vstup::citaj()
 
 char* Vstup::citajZnamky()
 {
-	return nullptr;
+	fgets(this->pomBuf, BUF_SIZE, this->fhandle);
+	return this->pomBuf;
 }
 
 Vstup::~Vstup()
