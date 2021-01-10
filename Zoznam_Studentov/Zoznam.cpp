@@ -18,6 +18,7 @@ Zoznam::Zoznam(char* paNazovSuboru)
 		char priezvisko[255];
 		char meno[255];
 		char pohlavie[255];
+		bool muz = true;
 		char znamky[255];
 		for (int i = 0; i < pocetStudentov; i++)
 		{
@@ -25,8 +26,13 @@ Zoznam::Zoznam(char* paNazovSuboru)
 			strcpy(priezvisko, vstup.citaj());
 			strcpy(pohlavie, vstup.citaj());
 			strcpy(znamky, vstup.citajZnamky());
+
+			if (strcmp(pohlavie, "Z")==0) //pohlavie[0] == 'Z')
+			{
+				muz = false;
+			}
 			
-			this->zoznam[i] = new Student(priezvisko, meno, pohlavie, znamky);
+			this->zoznam[i] = new Student(priezvisko, meno, muz, znamky); //this->zoznam[i] = new Student(priezvisko, meno, pohlavie, znamky);
 		}
 	}
 }
@@ -40,7 +46,8 @@ Zoznam::Zoznam(const Zoznam& zdroj)
 		{
 			this->zoznam[i] = new Student(zdroj.zoznam[i]->getPriezvisko(),
 				zdroj.zoznam[i]->getMeno(),
-				zdroj.zoznam[i]->getPohlavie(),
+				//zdroj.zoznam[i]->getPohlavie(),
+				zdroj.zoznam[i]->getMuz(),
 				zdroj.zoznam[i]->getZnamky());
 		}
 	}
@@ -56,7 +63,8 @@ Zoznam Zoznam::operator=(const Zoznam& zdroj)
 		{
 			this->zoznam[i] = new Student(zdroj.zoznam[i]->getPriezvisko(),
 				zdroj.zoznam[i]->getMeno(),
-				zdroj.zoznam[i]->getPohlavie(),
+				//zdroj.zoznam[i]->getPohlavie(),
+				zdroj.zoznam[i]->getMuz(),
 				zdroj.zoznam[i]->getZnamky());
 		}
 	}
@@ -131,14 +139,31 @@ void Zoznam::vypisNajhorsich()
 {
 	if (this->zoznam != nullptr)
 	{
-		for (int i = 0; i < this->pocetStudentov; i++)
-		{
-			switch (this->zoznam[i]->getPohlavie())
+		this->zoradZostupne();
+		bool najMuz = false;
+		bool najZena = false;
+			for (int i = 0; i < this->pocetStudentov; i++)
 			{
-			default:
-				break;
+				switch (this->zoznam[i]->getMuz())
+				{
+				case true:
+					if (najMuz)
+					{
+						break;
+					}
+					this->zoznam[i]->vypis();
+					najMuz = true;
+					break;
+				case false:
+					if (najZena)
+					{
+						break;
+					}
+					this->zoznam[i]->vypis();
+					najZena = true;
+					break;
+				}
 			}
-		}
 	}
 }
 

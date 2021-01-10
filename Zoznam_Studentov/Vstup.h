@@ -17,7 +17,6 @@ public:
 	int getPocetRiadkov();
 	char* citaj();
 	char* citajZnamky();
-	//inline void reset() { rewind(this->fhandle); };
 	~Vstup();
 };
 

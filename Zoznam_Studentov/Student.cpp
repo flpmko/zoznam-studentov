@@ -8,19 +8,23 @@ Student::Student()
 {
 }
 
-Student::Student(char* paPriezvisko, char* paMeno, char* paPohlavie, char* paZnamky)
+Student::Student(char* paPriezvisko, char* paMeno, bool paMuz, char* paZnamky) //(char* paPriezvisko, char* paMeno, char* paPohlavie, char* paZnamky)
 {
-	if (paMeno && paPriezvisko && paZnamky && paPohlavie != nullptr)
+	if (paMeno && paPriezvisko && paZnamky != nullptr) //paMeno && paPriezvisko && paZnamky && paPohlavie != nullptr
 	{
 		//priezvisko
 		this->priezvisko = new char[strlen(paPriezvisko) + 1];
 		strcpy(this->priezvisko, paPriezvisko);
+
 		//meno
 		this->meno = new char[strlen(paMeno) + 1];
 		strcpy(this->meno, paMeno);
+
 		//pohlavie
-		this->pohlavie = new char[strlen(paPohlavie) + 1];
-		strcpy(this->pohlavie, paPohlavie);
+		/*this->pohlavie = new char[strlen(paPohlavie) + 1];
+		strcpy(this->pohlavie, paPohlavie);*/
+		this->muz = paMuz;
+
 		//znamky
 		this->znamky = new char[strlen(paZnamky) + 1];
 		strcpy(this->znamky, paZnamky);
@@ -34,12 +38,16 @@ Student::Student(const Student& zdroj)
 		//priezvisko
 		this->priezvisko = new char[strlen(zdroj.priezvisko) + 1];
 		strcpy(this->priezvisko, zdroj.priezvisko);
+
 		//meno
 		this->meno = new char[strlen(zdroj.meno) + 1];
 		strcpy(this->meno, zdroj.meno);
+
 		//pohlavie
-		this->pohlavie = new char[strlen(zdroj.pohlavie) + 1];
-		strcpy(this->pohlavie, zdroj.pohlavie);
+		/*this->pohlavie = new char[strlen(zdroj.pohlavie) + 1];
+		strcpy(this->pohlavie, zdroj.pohlavie);*/
+		this->muz = zdroj.muz;
+
 		//znamky
 		this->znamky = new char[strlen(zdroj.znamky) + 1];
 		strcpy(this->znamky, zdroj.znamky);
@@ -54,12 +62,16 @@ Student Student::operator=(const Student& zdroj)
 		//priezvisko
 		this->priezvisko = new char[strlen(zdroj.priezvisko) + 1];
 		strcpy(this->priezvisko, zdroj.priezvisko);
+
 		//meno
 		this->meno = new char[strlen(zdroj.meno) + 1];
 		strcpy(this->meno, zdroj.meno);
+
 		//pohlavie
-		this->pohlavie = new char[strlen(zdroj.pohlavie) + 1];
-		strcpy(this->pohlavie, zdroj.pohlavie);
+		/*this->pohlavie = new char[strlen(zdroj.pohlavie) + 1];
+		strcpy(this->pohlavie, zdroj.pohlavie);*/
+		this->muz = zdroj.muz;
+
 		//znamky
 		this->znamky = new char[strlen(zdroj.znamky) + 1];
 		strcpy(this->znamky, zdroj.znamky);
@@ -119,6 +131,6 @@ Student::~Student()
 {
 	delete[] this->meno;
 	delete[] this->priezvisko;
-	delete[] this->pohlavie;
+	//delete[] this->pohlavie;
 	delete[] this->znamky;
 }

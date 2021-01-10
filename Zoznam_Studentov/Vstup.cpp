@@ -60,11 +60,6 @@ char* Vstup::citaj()
 			fscanf(this->fhandle, "%s", this->pomBuf);
 			return this->pomBuf;
 		}
-		/*else
-		{
-			rewind(this->fhandle);
-			this->citaj();
-		}*/
 	}
 	return nullptr;
 }

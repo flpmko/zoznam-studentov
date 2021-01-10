@@ -1,6 +1,9 @@
 #include "Student.h"
 #include "Vstup.h"
 #include "Zoznam.h"
+#include <iostream>
+
+using namespace std;
 
 int main()
 {
@@ -10,6 +13,8 @@ int main()
 	//zoznam.zorad();
 	zoznam.vypis();
 	zoznam.exportujAckarov();
+	cout << "-----------------------NAJHORSI----------------------" << endl;
+	zoznam.vypisNajhorsich();
 
 	return 0;
 }
