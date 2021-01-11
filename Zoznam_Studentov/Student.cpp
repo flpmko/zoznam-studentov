@@ -85,7 +85,7 @@ float Student::getPriemer()
 	if (this->znamky != nullptr)
 	{
 		float sucet = 0;
-		float pocet = (strlen(this->znamky)) % 6;
+		float pocet = 5; //(strlen(this->znamky)) % 6;
 		for (int i = 0; i < strlen(this->znamky) - 1; i++)
 		{
 			switch (this->znamky[i])
