@@ -25,6 +25,12 @@ Zoznam::Zoznam(char* paNazovSuboru)
 			strcpy(meno, vstup.citaj());
 			strcpy(priezvisko, vstup.citaj());
 			strcpy(pohlavie, vstup.citaj());
+
+			//for (int i = 0; i < 5; i++)
+			//{
+			//	//strcpy(znamky, vstup.citaj());
+			//	znamky[i] = *vstup.citaj();
+			//}
 			strcpy(znamky, vstup.citajZnamky());
 
 			if (strcmp(pohlavie, "Z")==0) //pohlavie[0] == 'Z')
