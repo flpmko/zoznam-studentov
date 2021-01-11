@@ -21,11 +21,13 @@ a vytvorí ich zoznam. Každý riadok obsahuje nasledujúce údaje (jednotlivé 
 ## Požiadavky		
 - meno vstupného súboru sa bude zadávať ako parameter štartu programu.
 
-- všetkých študujúcich v skupine usporiadajte podľa aritmetického priemeru známok, pričom A=1, B=2, C=3, D=4, E=5 
+- všetkých študujúcich v skupine usporiadajte podľa aritmetického priemeru známok, pričom
+
+`A=1, B=2, C=3, D=4, E=5`
 
 - vypíšte zoznam študujúcich na konzolu od najlepšieho po najhoršieho v tvare:
 
-	Priezvisko Meno Priemer (na 2 desatinné miesta)
+`Priezvisko Meno Priemer (na 2 desatinné miesta)`
 
 - do textového súboru (napr. *mamA.txt*) zapíšte zoznam tých študujúcich, ktorí majú aspoň z jedného predmetu známku A. Pred meno uveďte počet známok A.
 
