@@ -9,7 +9,6 @@
 		<img src="https://img.shields.io/badge/program-Informatics-00a9e0.svg" alt="faculty">
 	</a>
 </div>
-
 <h2 align="center">
 	University of Žilina<br>Faculty of Management Science and Informatics
 </h2>
